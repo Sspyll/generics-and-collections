@@ -1,11 +1,9 @@
-package main;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MyArrayList {
     private Object[] data;
-    private static int DEFAULT_CAPACITY = 3;
+    private static int DEFAULT_CAPACITY = 10;
     private int size;
     public MyArrayList() {
         this.data = new Object[DEFAULT_CAPACITY];
