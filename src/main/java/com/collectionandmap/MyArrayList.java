@@ -1,35 +1,35 @@
-import java.util.Arrays;
-import java.util.Objects;
+package main.java.com.collectionandmap;
 
-public class MyStack {
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class MyArrayList {
     private Object[] data;
     private static int DEFAULT_CAPACITY = 10;
     private int size;
 
-    public MyStack() {
+    public MyArrayList() {
         this.data = new Object[DEFAULT_CAPACITY];
         size = 0;
     }
 
-    public Object push(Object value) {
-        if (size == data.length) {
+    public void add(Object value) {
+        if (size >= data.length) {
             int newLength = data.length + (data.length >> 1);
             data = Arrays.copyOf(data, newLength);
         }
         data[size] = value;
         size++;
-        return value;
     }
 
-    public Object remove(int index) {
-        Objects.checkIndex(index, size);
-
-        Object element = data[index];
+    public void remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
         for (int i = index; i < size - 1; i++) {
             data[i] = data[i + 1];
         }
-        size--;
-        return element;
+        size --;
     }
 
     public void clear() {
@@ -41,19 +41,10 @@ public class MyStack {
         return size;
     }
 
-    public Object peek() {
-        return data[size - 1];
-    }
-
-    public Object pop() {
-        Object element = data[size - 1];
-        data[size - 1] = null;
-        size--;
-        return element;
-    }
-
     public Object get(int index) {
-        Objects.checkIndex(index, size);
+        if (index < 0 || index >= size) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
         return data[index];
     }
 }

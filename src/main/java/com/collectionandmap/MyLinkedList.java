@@ -1,3 +1,5 @@
+package main.java.com.collectionandmap;
+
 import java.util.Objects;
 
 public class MyLinkedList<T> {

@@ -1,3 +1,5 @@
+package main.java.com.collectionandmap;
+
 import java.util.Arrays;
 
 public class MyHashMap<K, V> {
