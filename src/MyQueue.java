@@ -60,7 +60,7 @@ public class MyQueue<T> {
         Node<T> current = head;
         head = head.next;
         head.previous = null;
-        size -= 1;
+        size --;
         return (T) current.value;
     }
 
